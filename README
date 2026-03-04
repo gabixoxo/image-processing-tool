@@ -1,0 +1,40 @@
+Am inceput prin a crea functii de alocare si dezalocare a matricelor.
+
+Pentru task ul 1 am implementat o functie care parcurge matricea pana la jumatate si interschimba valori,
+generand astfel o flip orizontal al matricei.
+
+Pentru task ul 2 am rotit imaginea spre stanga cu 90 de grade in sensul opus acelor de ceasornic. Am calculat
+transpusa matricei intr o matrice noua si apoi dat reverse la coloane. Am returnat matricea noua si am dezalocat o 
+pe cea originala.
+
+Pentru task ul 3 am folosit o functie care pune intr o matrice de dimensiuni h si w valorile din matricea originala
+care rezulta prin eliminarea coloanelor si a liniilor conform elementului de coordonate x si y dat.
+Pentru task ul 4 am implementat o functie care formeaza mai intai o imagine plina cu pixeli care are dimenisunile
+imaginii extinse. Apoi in centru am pus matricea originala.
+
+Pentru task ul 5 am verificat mai intai daca parametrii x si y permit sau nu copierea imaginii sursa peste 
+cea destinatie. Astfel daca ar trebui sa construiesc inafara matricei destinatie, returnez diret matricea destinatie.
+Daca am loc pentru imaginea sursa, incepand de la valoarea data de coordonatele x,y copiez imaginea sursa conform lui h si w.
+
+Pentru task ul 6 aplic filtrul asupra imaginii. Mai intai ma pozitionez in centrul matricei filtrului si apoi caut vecinii 
+pixelului curent din matricea imagine. Fiecare vecin se va inmulti cu valoarea din filtru corespunzatoare, apoi aceste 
+produse se vor aduna, rezultand astfel pixelul filtrat. Daca pixelul se afla pe margine valoarea din filtru se va inmulti cu 0.
+Astfel fiecare pixel va primi valoarea sumei, care, conform functei create, va returna 255 daca valoarea este mai mare decat 255 sau 
+0 daca este negativa.
+
+De fiecare data vor rezulta, de fapt, 3 matrice corespunzatoare culorilor red, green, blue.
+
+Pentru taskul 8 m am folosit de functiile anterioare pentru a scrie programul. Daca comanda data este diferita de comanta 'e' 
+care inseamna inchiderea programului, se aplica transformari asupra matricei(imaginii) respective. Am creat o structura de imagini 
+si o structura de filtre. Vom avea mai multe imagini si filtre astfel ca am creat si un pointer pentru fiecare. 
+
+Pentru comanda 'l' citeste parametrii, aloca imaginea, incarca imaginea, nr de imagini(indexf) creste pentru 
+a putea crea spatiu in caz ca va fi nevoie de a apela functia load pentru alta imagine. Apoi deoarce indexf a crescut cu 1
+punem pe pozitiile indexf-1 parametrii dati. Comanda 's' salveaza imaginea.
+
+Pentru comenzile urmatoare aplica functiile create la taskul anterior. Pentru 'cf' lucreaza asemanator lui 'l'.
+
+Pentru comenzile 'df' si 'di' elibereaza memoria pentru matricele si filtrele de la indexurile date, apoi muta imaginile si
+filtrele astefel incat indexurile corespunzatoare se vor decala cu o pozitie la stanga dupa ce vor fi sterse.
+
+La final elibereaza memorie pt imaginile si filtreele folosite.
